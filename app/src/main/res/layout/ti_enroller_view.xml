@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_navy_blue">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/processingImage2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bouncing_dots" />
+
+    <TextView
+        android:id="@+id/messageAboutProcess2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/please_wait"
+        android:textSize="18sp"
+        android:transitionName="messageForUser"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/processingImage2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tiEnrollmentTipsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/enroll_tips"
+        android:textColor="@color/white"
+        android:textAlignment="textStart"
+        android:lineSpacingExtra="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/speechProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headerTiEnrollmentTipsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please read the following:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:layout_marginBottom="@dimen/margin_large_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tiEnrollmentTipsTextView"
+        app:layout_constraintStart_toStartOf="@+id/tiEnrollmentTipsTextView" />
+
+    <ProgressBar
+        android:id="@+id/speechProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <ImageView
+
+        android:id="@+id/imageView_mic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large_24dp"
+        android:background="@drawable/bg_circle_white"
+        android:padding="12dp"
+        android:src="@drawable/ic_mic_filled"
+        app:layout_constraintBottom_toTopOf="@+id/textView_time_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_time_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large_24dp"
+        android:fontFamily="@font/sf_pro_text_regular"
+        android:text="0s"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        android:textSize="18sp"
+        tools:text="0s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/timer_CircularProgressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:indicatorColor="@color/colorAccent"
+        app:indicatorSize="72dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_mic"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_mic"
+        app:layout_constraintStart_toStartOf="@+id/imageView_mic"
+        app:layout_constraintTop_toTopOf="@+id/imageView_mic"
+        app:trackColor="@color/white_e5" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bg_record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

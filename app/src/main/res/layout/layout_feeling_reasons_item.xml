@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="options"
+            type="com.sonde.mentalfitness.domain.model.checkin.OptionModel" />
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.checkIn.feelingreason.FeelingReasonsViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small_extra_4dp">
+
+        <TextView
+            android:id="@+id/option_value_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_capsule_outline_gray"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center"
+            android:text="@{options.text}"
+            android:textColor="@color/text_color_gray"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Happy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.pin.set.SetPinViewModel" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_large_32dp"
+        tools:context=".presentation.ui.pin.SetPinActivity">
+
+        <TextView
+            style="@style/text_p1_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:layout_marginBottom="@dimen/margin_large_32dp"
+            android:text="@string/set_4_digit_pin"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_28sp" />
+
+        <TextView
+            style="@style/text_p1_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:layout_marginBottom="@dimen/margin_mid_16dp"
+            android:text="@string/_4_digit_pin_message"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_pin"
+            style="@style/EditText_h6_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:hint="@string/_4_digit_pin"
+            android:inputType="numberSigned"
+            android:maxLength="4"
+            android:text="@={viewModel.pinInput}" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_confirm_pin"
+            style="@style/EditText_h6_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:hint="@string/confirm_4_digit_pin"
+            android:inputType="numberSigned"
+            android:maxLength="4"
+            android:text="@={viewModel.confirmPinInput}" />
+
+        <Button
+            android:id="@+id/button_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_large_32dp"
+            android:layout_marginBottom="@dimen/margin_mid_16dp"
+            android:background="@drawable/bottom_button_drawable"
+            android:enabled="@{viewModel.isValidated()}"
+            android:onClick="@{()->viewModel.onSetButtonClick()}"
+            android:text="@string/set"
+            android:textAllCaps="false" />
+
+        <TextView
+            style="@style/text_p1_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_large_32dp"
+            android:text="@string/or"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_28sp" />
+
+        <Button
+            android:id="@+id/button_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="@dimen/margin_large_32dp"
+            android:background="@drawable/bottom_button_drawable"
+            android:onClick="@{()->viewModel.onNoPinButtonClick()}"
+            android:text="@string/no_pin_set_message"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+</layout>

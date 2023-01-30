@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="VoiceCall" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--    Custom styles   -->
+
+    <!--   ====================== Text H1 ======================   -->
+    <style name="text_h1_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="text_h1_semi_bold" parent="text_h1_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H1 **********************   -->
+
+    <!--   ====================== Text H2 ======================   -->
+
+    <!--   ********************** Text H2 **********************   -->
+
+    <!--   ====================== Text H3 ======================   -->
+
+    <!--   ********************** Text H3 **********************   -->
+
+    <!--   ====================== Text H4 ======================   -->
+    <style name="text_h4_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_h4_semi_bold" parent="text_h4_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H4 **********************   -->
+
+    <!--   ====================== Text H5 ======================   -->
+    <style name="text_h5_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_h5_regular" parent="text_h5_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <style name="text_h5_semi_bold" parent="text_h5_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H5 **********************   -->
+
+
+    <!--   ====================== Text H6 ======================   -->
+
+    <!--   ********************** Text H6 **********************   -->
+
+
+    <!--   ====================== Text P1 ======================   -->
+
+    <!--   ********************** Text P1 **********************   -->
+
+    <!--   ====================== Text P2 ======================   -->
+
+    <!--   ********************** Text P2 **********************   -->
+
+    <!--   ====================== Text P4 ======================   -->
+
+    <!--   ********************** Text P4 **********************   -->
+
+
+    <style name="button_text_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="button_large_accent" parent="button_text_parent">
+        <item name="android:background">@drawable/bg_capsule_blue</item>
+        <item name="android:layout_marginStart">@dimen/margin_large_32dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large_32dp</item>
+    </style>
+
+
+    <!--    How it works styles   -->
+
+    <!--    How it works styles     -->
+
+    <!--    Signup    -->
+    <!--    Signup    -->
+
+    <!--    General font    -->
+
+</resources>

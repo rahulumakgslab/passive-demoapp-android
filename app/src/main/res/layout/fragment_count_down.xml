@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.record.countdown.CountDownViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_navy_blue">
+
+
+        <TextView
+            android:id="@+id/textView_cancel"
+            style="@style/text_h5_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large_24dp"
+            android:layout_marginTop="@dimen/margin_large_32dp"
+            android:text="@string/common_cancel"
+            android:padding="6dp"
+            android:onClick="@{()-> viewModel.onCancelClicked()}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView17"
+            style="@style/text_h2_semi_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="@dimen/margin_large_24dp"
+            android:layout_marginBottom="@dimen/margin_large_extra_48dp"
+            android:gravity="center"
+            android:text="@{String.format(@string/be_prepared_talk_about_X_text, viewModel.passageModel.prompt.toLowerCase())}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Be prepared to talk about the weather where you are today" />
+        <TextView
+            android:id="@+id/textViewPassage"
+            style="@style/text_h2_semi_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="@dimen/margin_large_24dp"
+            android:layout_marginBottom="@dimen/margin_large_extra_48dp"
+            android:gravity="center"
+            android:text="@{viewModel.passageModel.prompt}"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Be prepared to talk about the weather where you are today" />
+
+        <TextView
+            android:id="@+id/textView18"
+            style="@style/text_h6_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_mid_12dp"
+            android:gravity="center"
+            android:alpha="0.61"
+            android:text="@string/get_ready"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textViewPassage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="200sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_cancel"
+            tools:text="3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

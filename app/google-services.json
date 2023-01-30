@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "656095378525",
+    "project_id": "sonde-voip",
+    "storage_bucket": "sonde-voip.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656095378525:android:03618c4bd73c434da6a1b4",
+        "android_client_info": {
+          "package_name": "com.sonde.edgeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656095378525-n7spigjj7icncorg7kg9pdfmlr9mfd3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEyuxkxt2OL_7G08n5fYfCtw3H0iWgBvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656095378525-n7spigjj7icncorg7kg9pdfmlr9mfd3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

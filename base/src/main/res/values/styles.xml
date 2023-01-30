@@ -1,0 +1,196 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--    Custom styles   -->
+
+    <!--   ====================== Text H1 ======================   -->
+    <style name="text_h1_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="text_h1_semi_bold" parent="text_h1_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H1 **********************   -->
+
+    <!--   ====================== Text H2 ======================   -->
+    <style name="text_h2_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="text_h2_semi_bold" parent="text_h2_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H2 **********************   -->
+
+    <!--   ====================== Text H3 ======================   -->
+    <style name="text_h3_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="text_h3_semi_bold" parent="text_h3_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H3 **********************   -->
+
+    <!--   ====================== Text H4 ======================   -->
+    <style name="text_h4_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_h4_semi_bold" parent="text_h4_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H4 **********************   -->
+
+    <!--   ====================== Text H5 ======================   -->
+    <style name="text_h5_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_h5_regular" parent="text_h5_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <style name="text_h5_semi_bold" parent="text_h5_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H5 **********************   -->
+
+
+    <!--   ====================== Text H6 ======================   -->
+    <style name="text_h6_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="EditText_h6_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="text_h6_semi_bold" parent="text_h6_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text H6 **********************   -->
+
+
+    <!--   ====================== Text P1 ======================   -->
+    <style name="text_p1_parent">
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_p1_regular" parent="text_p1_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <style name="text_p1_semi_bold" parent="text_p1_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text P1 **********************   -->
+
+    <!--   ====================== Text P2 ======================   -->
+    <style name="text_p2_parent">
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_p2_regular" parent="text_p2_parent">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <style name="text_p2_semi_bold" parent="text_p2_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+    </style>
+    <!--   ********************** Text P2 **********************   -->
+
+    <!--   ====================== Text P4 ======================   -->
+    <style name="text_p4_parent">
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_p4_regular" parent="text_p4_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <!--   ********************** Text P4 **********************   -->
+
+
+    <style name="button_text_parent">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="button_large_accent" parent="button_text_parent">
+        <item name="android:background">@drawable/bg_capsule_blue</item>
+        <item name="android:layout_marginStart">@dimen/margin_large_32dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large_32dp</item>
+    </style>
+
+    <style name="button_large_accent_bottom" parent="button_text_parent">
+        <item name="android:background">@drawable/bg_capsule_blue</item>
+        <item name="android:layout_marginStart">@dimen/margin_large_32dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large_32dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_large_24dp</item>
+    </style>
+
+    <style name="button_white" parent="button_text_parent">
+        <item name="android:background">@drawable/bg_capsule_white</item>
+        <item name="android:padding">@dimen/margin_mid_16dp</item>
+    </style>
+
+    <style name="button_white_with_gray_outline" parent="button_text_parent">
+        <item name="android:background">@drawable/bg_capsule_outline_gray_white_solid</item>
+    </style>
+
+
+    <!--    How it works styles   -->
+    <style name="how_it_works_h5" parent="text_h5_semi_bold">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large_32dp</item>
+    </style>
+
+    <style name="how_it_works_p2" parent="text_p2_regular">
+        <item name="android:layout_marginEnd">@dimen/margin_large_32dp</item>
+    </style>
+
+    <style name="text_number_with_circular_bg" parent="text_h1_semi_bold">
+        <item name="android:background">@drawable/bg_circle_light_blue</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_color_dark_blue</item>
+    </style>
+    <!--    How it works styles     -->
+
+    <!--    Signup    -->
+    <!--    Signup    -->
+
+    <!--    General font    -->
+
+
+    <!--    General font    -->
+
+
+</resources>

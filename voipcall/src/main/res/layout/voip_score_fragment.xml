@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.twilio.voipcall.score.ScoreViewModel" />
+
+        <variable
+            name="scoreRepresentationModel"
+            type="com.twilio.voipcall.domain.model.score.ScoreRepresentationModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_f9"
+            android:paddingBottom="@dimen/margin_mid_16dp">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/score_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView24"
+                style="@style/text_h4_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:layout_marginEnd="@dimen/margin_large_24dp"
+                android:onClick="@{()-> viewModel.onDoneButtonClicked()}"
+                android:text="@string/common_done"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView25"
+                style="@style/text_h4_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{scoreRepresentationModel.date}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24"
+                tools:text="January 20, 2021" />
+
+            <TextView
+                android:id="@+id/textView26"
+                style="@style/text_h4_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:drawablePadding="10dp"
+                android:text="@string/your_mental_fitness"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+            <ImageView
+                android:id="@+id/img_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small_8dp"
+                android:onClick="@{()->viewModel.onScoreInfoClick()}"
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toEndOf="@id/textView26"
+                app:layout_constraintTop_toTopOf="@id/textView26" />
+
+            <!-- <Button
+                 android:id="@+id/button3"
+                 style="@style/button_large_accent"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="16dp"
+                 android:text="Button"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/textView26" />-->
+<!--            android:backgroundTint="@{context.getColor(scoreRepresentationModel.titleScoreRepresentation.mainBackgroundResId)}"-->
+            <LinearLayout
+                android:id="@+id/layout_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:background="@drawable/bg_capsule_blue"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView26">
+<!--                android:backgroundTint="@{context.getColor(scoreRepresentationModel.titleScoreRepresentation.scoreValueBackgroundResId)}"-->
+                <TextView
+                    android:id="@+id/textView_score_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_circle_light_blue"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/Padding_small_8dp"
+                    android:text="@{String.valueOf(scoreRepresentationModel.titleScoreRepresentation.scoreValue)}"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    tools:text="78" />
+
+                <TextView
+                    android:id="@+id/textView_score_type"
+                    style="@style/text_h1_semi_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_small_8dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:drawablePadding="26dp"
+                    android:text="@{scoreRepresentationModel.titleScoreRepresentation.scoreTitle}"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+
+                    tools:text="Standard" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView27"
+                style="@style/text_h5_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large_24dp"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:layout_marginEnd="@dimen/margin_large_24dp"
+                android:gravity="center"
+                android:text="@{scoreRepresentationModel.titleScoreRepresentation.scoreSummary}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_score"
+                tools:text="Good news - your score means that your voice is most consistent with people who have below average rates of feeling abnormally down or anxious!" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

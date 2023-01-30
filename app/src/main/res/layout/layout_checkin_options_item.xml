@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="options"
+            type="com.sonde.mentalfitness.domain.model.checkin.OptionModel" />
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.checkIn.feeling.FeelingViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="@dimen/width80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_mid_16dp"
+        android:onClick="@{() -> viewModel.selectFeelingOption(options)}"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/option_emoji_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_circle_white"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="@{options.emojiText}"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/ts_large_26sp"
+            tools:text="😭" />
+
+        <TextView
+            android:id="@+id/option_text_textView"
+            style="@style/text_p2_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_small_8dp"
+            android:text="@{options.text}"
+            android:textAlignment="center"
+            android:textSize="13sp"
+            tools:text="Sad" />
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f10028</color>
+    <color name="colorPrimaryDark">#a3090e</color>
+    <color name="colorAccent">#b0bec5</color>
+    <!--<color name="colorPrimary">#00283C</color>-->
+    <!--<color name="colorPrimaryDark">#00344E</color>-->
+    <!--<color name="colorAccent">#52C3FF</color>-->
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="white_f9">#F9F9F9</color>
+
+
+    <!--    Background colors   -->
+    <color name="background_navy_blue">#00344E</color>
+    <color name="background_navy_blue_dark">#00283C</color>
+
+
+    <!--    Text colors  -->
+    <color name="text_color_black">#172239</color>
+    <color name="text_color_accent">#52C3FF</color>
+
+
+    <!--   Onboarding   -->
+
+
+    <!-- Screens background color-->
+
+    <!-- dots inactive colors -->
+
+    <!-- dots active colors -->
+
+    <color name="score_peak">#3DD9B3</color>
+    <color name="score_peak_dark">#0BC799</color>
+
+    <color name="score_standard">#52C3FF</color>
+    <color name="score_standard_dark">#4D9DC8</color>
+
+    <color name="score_reduced">#DF8F55</color>
+    <color name="score_reduced_dark">#BC7746</color>
+
+</resources>

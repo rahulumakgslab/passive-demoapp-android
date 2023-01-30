@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--    Margin  -->
+
+    <dimen name="margin_small_8dp">8dp</dimen>
+
+    <dimen name="margin_mid_16dp">16dp</dimen>
+
+    <dimen name="margin_large_24dp">24dp</dimen>
+    <dimen name="margin_large_32dp">32dp</dimen>
+
+    <dimen name="margin_large_extra_48dp">48dp</dimen>
+    <!--    Margin  -->
+
+    <!--    Padding  -->
+
+    <dimen name="Padding_small_8dp">8dp</dimen>
+
+    <!--    Padding  -->
+
+    <!--    text size  -->
+
+    <dimen name="ts_mid_18sp">18sp</dimen>
+
+    <!--    text size  -->
+
+    <dimen name="score_type_value">16dp</dimen>
+
+    <!-- onboarding    -->
+
+
+    <!-- back button    -->
+
+    <!-- Edit Text    -->
+
+    <!-- Form TextView    -->
+
+    <!-- Error TextView    -->
+
+    <!-- Error TextView  Login  -->
+
+    <!-- Button    -->
+
+
+</resources>

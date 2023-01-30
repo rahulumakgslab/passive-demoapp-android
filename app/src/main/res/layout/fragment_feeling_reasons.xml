@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.checkIn.feelingreason.FeelingReasonsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".presentation.ui.checkIn.feelingreason.FeelingReasonsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mid_16dp"
+                android:layout_marginTop="@dimen/margin_top_back_button"
+                android:onClick="@{()-> viewModel.onBackButtonClicked()}"
+                android:src="@drawable/ic_back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_skip"
+                style="@style/button_white"
+                android:layout_width="@dimen/skip_btn_width"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_large_24dp"
+                android:onClick="@{()-> viewModel.onSkipButtonClicked()}"
+                android:text="@string/skip"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageButton" />
+
+            <TextView
+                android:id="@+id/daily_check_in_label_textView"
+                style="@style/text_p2_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:text="@string/daily_check_in"
+                app:layout_constraintEnd_toStartOf="@+id/daily_check_in_date_textView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+            <TextView
+                android:id="@+id/daily_check_in_date_textView"
+                style="@style/text_p2_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small_extra_4dp"
+                android:text="@{viewModel.todayDate}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/daily_check_in_label_textView"
+                app:layout_constraintTop_toTopOf="@+id/daily_check_in_label_textView"
+                tools:text="January 20th" />
+
+            <TextView
+                android:id="@+id/textView_title"
+                style="@style/text_h2_semi_bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_8dp"
+                android:gravity="center"
+                android:text="@{viewModel.question}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/daily_check_in_label_textView"
+                tools:text="How are you feeling today?" />
+
+            <TextView
+                android:id="@+id/textView_selected_feeling_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid_18dp"
+                android:background="@drawable/bg_circle_white"
+                android:gravity="center"
+                android:paddingStart="@dimen/margin_large_24dp"
+                android:paddingTop="22dp"
+                android:paddingEnd="@dimen/margin_large_24dp"
+                android:visibility="gone"
+                android:paddingBottom="22dp"
+                android:text="@{viewModel.selectedFeelingOption.emojiText}"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+            <TextView
+                android:id="@+id/textView_selected_feeling_text"
+                style="@style/text_p2_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_8dp"
+                android:text="@{viewModel.selectedFeelingOption.text}"
+                android:textSize="13sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/textView_selected_feeling_emoji"
+                app:layout_constraintStart_toStartOf="@+id/textView_selected_feeling_emoji"
+                app:layout_constraintTop_toBottomOf="@+id/textView_selected_feeling_emoji"
+                tools:text="Happy" />
+
+            <TextView
+                android:id="@+id/textView_question"
+                style="@style/text_h2_semi_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mid_16dp"
+                android:layout_marginEnd="@dimen/margin_mid_16dp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:text="@{viewModel.secondaryQuestion}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_selected_feeling_text"
+                tools:text="Any specific reasons you’d like to share?" />
+
+
+            <ScrollView
+                android:id="@+id/feeling_reason_options_scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_mid_12dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toTopOf="@+id/button_next_step"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_question"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/feeling_reason_options_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large_24dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:overScrollMode="never" />
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/button_next_step"
+                style="@style/button_large_accent_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:backgroundTint="@{viewModel.isAnyReasonSelected ? @color/colorAccent :@color/white_ea}"
+                android:enabled="@{viewModel.isAnyReasonSelected}"
+                android:onClick="@{()-> viewModel.onNextStepButtonClicked()}"
+                android:text="@string/next_step"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feeling_reason_options_scrollView"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</layout>

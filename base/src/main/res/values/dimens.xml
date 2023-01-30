@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Margin  -->
+    <dimen name="margin_small_extra_4dp">4dp</dimen>
+
+    <dimen name="margin_small_6dp">6dp</dimen>
+    <dimen name="margin_small_8dp">8dp</dimen>
+
+    <dimen name="margin_mid_12dp">12dp</dimen>
+    <dimen name="margin_mid_16dp">16dp</dimen>
+    <dimen name="margin_mid_18dp">18dp</dimen>
+
+    <dimen name="margin_large_24dp">24dp</dimen>
+    <dimen name="margin_large_32dp">32dp</dimen>
+    <dimen name="margin_large_36dp">36dp</dimen>
+
+    <dimen name="margin_large_extra_48dp">48dp</dimen>
+    <dimen name="margin_large_extra_60dp">60dp</dimen>
+    <!--    Margin  -->
+
+    <dimen name="margin_top_back_button">12dp</dimen>
+
+    <!--    Padding  -->
+
+    <dimen name="Padding_small_8dp">8dp</dimen>
+
+    <dimen name="Padding_large_extra_48dp">48dp</dimen>
+    <!--    Padding  -->
+
+    <!--    text size  -->
+
+    <dimen name="ts_mid_16sp">16sp</dimen>
+    <dimen name="ts_mid_18sp">18sp</dimen>
+
+    <dimen name="ts_large_26sp">26sp</dimen>
+    <!--    text size  -->
+
+    <dimen name="skip_btn_width">112dp</dimen>
+    <dimen name="button_height_56dp">56dp</dimen>
+
+    <dimen name="score_type_value">16dp</dimen>
+    <dimen name="score_type_emoji">36dp</dimen>
+
+    <!-- onboarding    -->
+
+
+    <!-- back button    -->
+
+    <!-- Edit Text    -->
+
+    <!-- Form TextView    -->
+
+    <!-- Error TextView    -->
+
+    <!-- Error TextView  Login  -->
+
+    <!-- Button    -->
+    <dimen name="font_28sp">28sp</dimen>
+    <dimen name="font_22sp">22sp</dimen>
+    <dimen name="width80dp">80dp</dimen>
+    <dimen name="margin_large_20dp">20dp</dimen>
+
+
+</resources>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_ea"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_ea">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mf_score_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    style="@style/text_h6_semi_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_extra_48dp"
+                    android:layout_marginEnd="@dimen/margin_mid_16dp"
+                    android:text="@string/common_done"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textView46"
+                    style="@style/text_h5_semi_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_extra_48dp"
+                    android:text="@string/check_in_results"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/first_section_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large_24dp"
+                android:background="@drawable/bg_white_solid_common">
+
+                <TextView
+                    android:id="@+id/your_mental_fitness_title"
+                    style="@style/text_h4_semi_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_24dp"
+                    android:drawablePadding="@dimen/margin_mid_12dp"
+                    android:gravity="center"
+                    android:text="@string/your_mental_fitness_score"
+                    app:drawableEndCompat="@drawable/ic_info"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/date_textView"
+                    style="@style/text_p1_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/your_mental_fitness_title"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/your_mental_fitness_title"
+                    tools:text="August 26, 2021" />
+
+                <RelativeLayout
+                    android:id="@+id/half_circle_graph_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/date_textView"
+                    android:layout_margin="@dimen/margin_large_24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/bg_white_solid_common"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_textView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/graph_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        android:layout_marginBottom="@dimen/margin_large_24dp"
+                        android:background="#1A23C35E">
+
+                        <com.tenclouds.gaugeseekbar.GaugeSeekBar
+                            android:id="@+id/custom_progress"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_large_20dp"
+                            android:layout_marginTop="@dimen/margin_large_20dp"
+                            android:padding="@dimen/margin_large_24dp"
+                            app:interactive="false"
+                            app:layout_constraintDimensionRatio="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:progress="0.9"
+                            app:showProgress="false"
+                            app:startAngleDegrees="90"
+                            app:thumbColor="@color/score_high"
+                            app:thumbRadius="16dp"
+                            app:trackGradient="@array/aggregated_score_track_gradient_colors"
+                            app:trackGradientPositions="@array/aggregated_score_track_Gradient_Positions_array"
+                            app:trackWidth="14dp" />
+
+                        <TextView
+                            android:id="@+id/feature_score_textView"
+                            style="@style/text_h1_semi_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_large_32dp"
+                            android:text="86"
+                            android:textAlignment="center"
+                            android:textColor="@color/score_high"
+                            android:textSize="56sp"
+                            app:layout_constraintEnd_toEndOf="@+id/custom_progress"
+                            app:layout_constraintStart_toStartOf="@+id/custom_progress"
+                            app:layout_constraintTop_toTopOf="@+id/custom_progress" />
+
+                        <TextView
+                            android:id="@+id/feature_score_scale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_mid_18dp"
+                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:text="Excellent"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/feature_score_textView"
+                            app:layout_constraintStart_toStartOf="@+id/feature_score_textView" />
+
+                        <TextView
+                            style="@style/text_p2_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="@dimen/margin_large_24dp"
+                            android:text="0"
+                            android:textColor="@color/text_color_gray"
+                            app:layout_constraintBottom_toBottomOf="@+id/custom_progress"
+                            app:layout_constraintStart_toStartOf="@+id/custom_progress"
+                            app:layout_constraintTop_toTopOf="@+id/custom_progress" />
+
+                        <TextView
+                            style="@style/text_p2_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_large_24dp"
+                            android:layout_marginEnd="6dp"
+                            android:text="100"
+                            android:textColor="@color/text_color_gray"
+                            app:layout_constraintBottom_toBottomOf="@+id/custom_progress"
+                            app:layout_constraintEnd_toEndOf="@+id/custom_progress"
+                            app:layout_constraintTop_toTopOf="@+id/custom_progress" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_8dp"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/margin_large_24dp"
+                android:paddingEnd="@dimen/margin_large_24dp">
+
+                <TextView
+                    style="@style/text_h5_semi_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_score_components" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/feature_score_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_mid_16dp"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

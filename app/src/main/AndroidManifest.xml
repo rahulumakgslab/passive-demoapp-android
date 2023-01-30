@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sonde.mentalfitness">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+
+    <permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_HOTWORD" />
+    <uses-permission android:name="android.permission.MANAGE_SOUND_TRIGGER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!--    <permission android:name="android.permission.MANAGE_SOUND_TRIGGER"-->
+<!--        android:protectionLevel="signature|privileged" />-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+
+    <application
+        android:name=".MentalFitnessApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/sonde_app_icon"
+        android:label="@string/sonde_vocal_biomarkers"
+        android:roundIcon="@mipmap/sonde_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".presentation.ui.textIndependent.EnrollmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.welcome.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.splash.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.ui.pin.PinCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.signup.SignupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".presentation.ui.voiceprocessing.VoiceProcessingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.checkIn.CheckInHostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.howitwork.HowItWorksActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.record.recording.RecordingHostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.record.foregroundrecording.PassiveForegroundRecordingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".domain.RecordingService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
+        <receiver
+            android:name=".domain.CallReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".IPCBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.sonde.edgeapp" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.sonde.edgeapp.SoundTriggerTestService"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.android.intent.action.MANAGE_SOUND_TRIGGER" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".domain.SegmentScoringService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

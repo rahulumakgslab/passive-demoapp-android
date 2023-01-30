@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.record.recording.RecordingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_navy_blue">
+
+
+        <TextView
+            android:id="@+id/textView_cancel"
+            style="@style/text_h5_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large_24dp"
+            android:layout_marginTop="@dimen/margin_large_24dp"
+            android:text="@string/common_cancel"
+            android:padding="6dp"
+            android:onClick="@{()-> viewModel.onCancelClicked()}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/recording"
+            android:textColor="@color/white"
+            style="@style/text_h6_semi_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/imageView_mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large_24dp"
+            android:background="@drawable/bg_circle_white"
+            android:padding="12dp"
+            android:src="@drawable/ic_mic_filled"
+            app:layout_constraintBottom_toTopOf="@+id/textView16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/timer_CircularProgressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            app:indicatorColor="@color/pink"
+            app:indicatorSize="72dp"
+            android:max="@{viewModel.passageModel.timerLength}"
+            android:progress="@{viewModel.passageModel.timerLength - viewModel.timerCount}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_mic"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_mic"
+            app:layout_constraintStart_toStartOf="@+id/imageView_mic"
+            app:layout_constraintTop_toTopOf="@+id/imageView_mic"
+            app:trackColor="@color/white_e5" />
+
+        <TextView
+            android:id="@+id/textView_time_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large_24dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:text="@{String.format(@string/timer_seconds, viewModel.timerCount)}"
+            android:textColor="@color/white"
+            android:alpha="0.5"
+            android:textSize="22sp"
+            tools:text="21s"
+            app:layout_constraintBottom_toTopOf="@+id/timer_CircularProgressIndicator"
+            app:layout_constraintEnd_toEndOf="@+id/timer_CircularProgressIndicator"
+            app:layout_constraintStart_toStartOf="@+id/timer_CircularProgressIndicator" />
+
+        <TextView
+            android:id="@+id/textView20"
+            style="@style/text_h2_semi_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large_24dp"
+            android:layout_marginEnd="@dimen/margin_large_24dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textView_time_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_cancel"
+            android:text="@{viewModel.passageModel.prompt}"
+            tools:text="Tell us about the weather where you are today" />
+
+        <TextView
+            android:id="@+id/textView21"
+            style="@style/text_h6_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large_24dp"
+            android:alpha="0.61"
+            android:layout_marginEnd="@dimen/margin_large_24dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_cancel"
+            android:text="@{String.format(@string/speak_for_x_seconds, viewModel.passageModel.timerLength)}"
+            tools:text="Please speak for 30 seconds" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

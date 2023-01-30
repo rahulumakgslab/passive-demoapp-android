@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="segmetScore"
+            type="com.sonde.mentalfitness.domain.model.SegmentScore" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBlock"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_margin="2dp"
+        app:cardBackgroundColor="@color/text_color_accent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_small_extra_4dp">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

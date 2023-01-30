@@ -1,0 +1,84 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+
+
+    defaultConfig {
+//        applicationId "com.sondehealth.voipcall"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    // Specify that we want to split up the APK based on ABI
+//    splits {
+//        abi {
+//            // Enable ABI split
+//            enable true
+//
+//            // Clear list of ABIs
+//            reset()
+//
+//            // Specify each architecture currently supported by the Video SDK
+//            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+//
+//            // Specify that we do not want an additional universal SDK
+//            universalApk false
+//        }
+//    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+//    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation project(':base')
+    api project(':voip_vad')
+    implementation "com.twilio:voice-android:5.8.0"
+    implementation "com.android.support:design:30.0.0}"
+    implementation "com.android.support:support-media-compat:30.0.0"
+    implementation "com.android.support:animated-vector-drawable:30.0.0"
+    implementation "com.android.support:appcompat-v7:30.0.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation "com.google.firebase:firebase-messaging:17.6.0"
+    implementation 'com.google.firebase:firebase-core:9.6.1'
+    implementation "com.twilio:audioswitch:1.1.2"
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    androidTestImplementation "androidx.test.ext:junit:1.1.1"
+}

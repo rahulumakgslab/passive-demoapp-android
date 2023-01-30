@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Voip PoC</string>
+    <string name="turn_speaker_on">Speaker ON</string>
+    <string name="callee">client identity or phone number</string>
+    <string name="callHint">Dial a client name or phone number. Leaving the field empty results in an automated response.</string>
+
+    <!--    Common  -->
+
+    <!--    How it works    -->
+    <!--    How it works    -->
+
+    <!--    Welcome    -->
+    <!--    Welcome    -->
+
+    <!--    Login    -->
+
+    <!--    Login    -->
+
+    <!--    Forgot Password    -->
+
+    <!--    Sign Up    -->
+    <!--    Sign Up    -->
+
+    <!--    OTP verification    -->
+    <!--   OTP verification    -->
+
+    <!--   Onboarding    -->
+
+    <string name="analyzing_your_voice">Analyzing your voice</string>
+    <string name="understanding_your_mental_fitness">Understanding your Respiratory Symptoms Risk</string>
+    <string name="checking_additional_factors">Checking additional factors</string>
+    <string name="finalizing_your_scores">Finalizing your scores</string>
+    <string name="oops">Oops.</string>
+    <string name="cal_error_emoji">😐</string>
+    <string name="go_back_and_try_again">Go back and try again</string>
+    <string name="cancel">Cancel</string>
+    <string name="common_done">Done</string>
+    <string name="your_mental_fitness">Your Respiratory Symptoms Risk</string>
+    <string name="score_info">Score Info</string>
+    <string name="score_info_detail">Respiratory Symptoms Risk scores are tailored to reflect a user’s level of respiratory symptoms. Higher risk scores reflect increasing similarity to vocal characteristics observed in people with asthma, COPD, and similar chronic airway conditions.  Respiratory Symptom Risk scores can be used to detect or monitor respiratory symptoms in various conditions. \n Symptoms that drive the Respiratory Symptom Risk scores may include: \n   \t \t \t • Shortness of breath \n \t \t \t • Cough \n \t \t \t • Chest tightness or pain</string>
+    <string name="error_message_elck_failed">Uh oh, looks like we can\'t process your voice sample. Please try again in a quiet place and make sure to speak clearly without pausing</string>
+    <string name="answer">Answer</string>
+    <string name="decline">Decline</string>
+    <string name="audio_device">Audio Device</string>
+    <string name="select_device">Select Device</string>
+    <string name="channel_name">Score channel</string>
+    <string name="channel_description">Display the score</string>
+    <string name="check_in_results">Check-in results</string>
+    <string name="your_mental_fitness_score">Your mental fitness score</string>
+    <string name="your_score_components">Your score components</string>
+    <string-array name="aggregated_score_track_Gradient_Positions_array">
+        <item>0.0</item>
+        <item>0.27</item>
+        <item>0.41</item>
+        <item>0.57</item>
+    </string-array>
+</resources>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.sonde.mentalfitness.domain.GenderType" />
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.signup.SignupStepViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/image_view_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large_24dp"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:layout_marginRight="@dimen/margin_large_24dp"
+                android:background="@drawable/back_btn_bg"
+                android:contentDescription="@string/img_description_back_button"
+                android:src="@drawable/back_icon" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/margin_large_32dp"
+                    android:paddingEnd="@dimen/margin_large_32dp">
+
+                    <TextView
+                        style="@style/text_p4_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/margin_mid_16dp"
+                        android:text="@string/title"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/font_22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/text_p4_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_large_24dp"
+                        android:layout_marginLeft="@dimen/margin_large_32dp"
+                        android:layout_marginTop="@dimen/Padding_small_8dp"
+                        android:layout_marginRight="@dimen/margin_large_32dp"
+                        android:text="@string/step_no"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="14sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        style="@style/text_p4_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fname"
+                        android:textColor="@color/text_color_black" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_fname"
+                        style="@style/EditText_h6_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:layout_marginBottom="@dimen/margin_small_8dp"
+                        android:background="@drawable/login_input_round_corners"
+                        android:inputType="textPersonName|textCapWords"
+                        android:text="@={viewModel.firstName}" />
+
+                    <TextView
+                        android:id="@+id/firstname_err_msg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_large_32dp"
+                        android:layout_marginRight="@dimen/margin_large_32dp"
+                        android:textColor="@color/text_color_error_msg" />
+
+                    <TextView
+                        style="@style/text_p4_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:text="@string/lname"
+                        android:textColor="@color/text_color_black" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_lname"
+                        style="@style/EditText_h6_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:layout_marginBottom="@dimen/margin_small_8dp"
+                        android:imeOptions="actionNext"
+                        android:background="@drawable/login_input_round_corners"
+                        android:inputType="textPersonName|textCapWords"
+                        android:text="@={viewModel.lastName}" />
+
+                    <TextView
+                        style="@style/text_p4_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:text="@string/email"
+                        android:textColor="@color/text_color_black" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_email"
+                        style="@style/EditText_h6_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:layout_marginBottom="@dimen/margin_small_8dp"
+                        android:imeOptions="actionDone"
+                        android:background="@drawable/login_input_round_corners"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.email}" />
+
+
+                    <TextView
+                        android:id="@+id/pass_err_msg"
+                        style="@style/text_p4_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gender"
+                        android:textColor="@color/text_color_black" />
+
+                    <TextView
+                        android:id="@+id/text_view_forget_password"
+                        style="@style/text_p4_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_small_8dp"
+                        android:text="@string/gender_msg" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioMale"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{viewModel.genderType.equals(GenderType.MALE)}"
+                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:onClick="@{()->viewModel.setUserGender(GenderType.MALE)}"
+                            android:text="@string/male"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/radioFemale"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/Padding_small_8dp"
+                            android:checked="@{viewModel.genderType.equals(GenderType.FEMALE)}"
+                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:onClick="@{()->viewModel.setUserGender(GenderType.FEMALE)}"
+                            android:text="@string/female"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/radioOther"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/Padding_small_8dp"
+                            android:checked="@{viewModel.genderType.equals(GenderType.OTHER)}"
+                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:onClick="@{()->viewModel.setUserGender(GenderType.OTHER)}"
+                            android:text="@string/other"
+                            android:textSize="15sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        style="@style/text_p4_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:text="@string/dob"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_black" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/birth_year"
+                        style="@style/EditText_h6_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small_8dp"
+                        android:layout_marginBottom="@dimen/margin_small_8dp"
+                        android:background="@drawable/login_input_round_corners"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/birth_year_hint"
+                        android:text="@={viewModel.birthYear}" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:text="@string/signup_with_questionnaire"
+                        android:checked="@{viewModel.isQuestionnaireChecked}"
+                        android:layout_marginTop="@dimen/margin_mid_16dp"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/button_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_large_32dp"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:layout_marginEnd="@dimen/margin_large_32dp"
+                android:layout_marginBottom="@dimen/margin_mid_16dp"
+                android:background="@drawable/bottom_button_drawable"
+                android:enabled="@{viewModel.isValidated()}"
+                android:onClick="@{()-> viewModel.onRegisterButtonClicked()}"
+                android:text="@string/sign_up"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/loading_view"
+            layout="@layout/loading_layout"
+            android:fitsSystemWindows="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

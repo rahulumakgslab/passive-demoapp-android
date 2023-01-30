@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/success_check"
+            app:layout_constraintBottom_toTopOf="@+id/headerTiEnrollmentTipsTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/margin_large_24dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tiEnrollmentTipsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Your voice has been identified and \n verified. You are now ready to begin a \n passive health check."
+            android:textColor="@color/text_color_black"
+            android:textAlignment="center"
+            android:lineSpacingExtra="5dp"
+            android:textSize="@dimen/ts_mid_16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headerTiEnrollmentTipsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Success!"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:layout_marginBottom="@dimen/margin_large_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tiEnrollmentTipsTextView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_enroll_user"
+                style="@style/button_large_accent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large_32dp"
+                android:layout_marginRight="@dimen/margin_large_32dp"
+                android:layout_marginBottom="@dimen/margin_large_extra_60dp"
+                android:text="Begin passive health check" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

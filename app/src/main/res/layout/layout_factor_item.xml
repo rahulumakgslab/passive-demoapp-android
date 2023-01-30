@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="scoreFactorAdapterModel"
+            type="com.sonde.mentalfitness.domain.model.checkin.score.ScoreFactorAdapterModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <View
+            android:id="@+id/separator_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white_ea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_mid_16dp"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:layout_marginBottom="@dimen/margin_mid_16dp"
+            android:src="@{context.getDrawable(scoreFactorAdapterModel.iconDrawableResId)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator_view" />
+
+        <TextView
+            android:id="@+id/textView_type"
+            style="@style/text_h5_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_mid_16dp"
+            android:textSize="@{context.getResources().getDimension(scoreFactorAdapterModel.typeTextSizeResId)}"
+            android:text="@{scoreFactorAdapterModel.type}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@{context.getColor(scoreFactorAdapterModel.typeTextColorResId)}"
+            tools:text="High" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_mid_16dp"
+            android:layout_marginEnd="4dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_icon"
+            app:layout_constraintEnd_toStartOf="@+id/textView_type"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView_icon"
+            app:layout_constraintTop_toTopOf="@+id/imageView_icon">
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_small_extra_4dp"
+                android:id="@+id/textView_title"
+                style="@style/text_h5_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{scoreFactorAdapterModel.title}"
+                tools:text="Feeling: Happy" />
+
+            <TextView
+                android:layout_marginBottom="@dimen/margin_small_extra_4dp"
+                android:id="@+id/textView_sub_title"
+                style="@style/text_p2_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constrainedWidth="true"
+                android:layout_marginTop="4dp"
+                android:text="@{scoreFactorAdapterModel.subTitle}"
+                android:visibility="@{(scoreFactorAdapterModel.subTitle == null || scoreFactorAdapterModel.subTitle.length() == 0) ? View.GONE : View.VISIBLE}"
+                tools:text="Work, Family" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

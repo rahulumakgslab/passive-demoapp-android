@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.score.ScoreViewModel" />
+
+        <variable
+            name="scoreRepresentationModel"
+            type="com.sonde.mentalfitness.domain.model.checkin.score.ScoreRepresentationModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/score_background"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_mid_16dp">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/score_background"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView24"
+                style="@style/text_h4_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:layout_marginEnd="@dimen/margin_large_24dp"
+                android:onClick="@{()-> viewModel.onDoneButtonClicked()}"
+                android:text="@string/common_done"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView25"
+                style="@style/text_h4_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{scoreRepresentationModel.date}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24"
+                tools:text="January 20, 2021" />
+
+            <TextView
+                android:id="@+id/textView26"
+                style="@style/text_h4_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:drawablePadding="10dp"
+                android:text="@string/your_mental_fitness"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+            <ImageView
+                android:id="@+id/img_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small_8dp"
+                android:onClick="@{()->viewModel.onScoreInfoClick()}"
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toEndOf="@id/textView26"
+                app:layout_constraintTop_toTopOf="@id/textView26" />
+
+            <!-- <Button
+                 android:id="@+id/button3"
+                 style="@style/button_large_accent"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="16dp"
+                 android:text="Button"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/textView26" />-->
+
+            <LinearLayout
+                android:id="@+id/layout_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:background="@drawable/bg_capsule_blue"
+                android:backgroundTint="@{context.getColor(scoreRepresentationModel.titleScoreRepresentation.mainBackgroundResId)}"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView26">
+
+                <TextView
+                    android:id="@+id/textView_score_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_circle_light_blue"
+                    android:backgroundTint="@{context.getColor(scoreRepresentationModel.titleScoreRepresentation.scoreValueBackgroundResId)}"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/Padding_small_8dp"
+                    android:text="@{String.valueOf(scoreRepresentationModel.titleScoreRepresentation.scoreValue)}"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    tools:text="78" />
+
+                <TextView
+                    android:id="@+id/textView_score_type"
+                    style="@style/text_h1_semi_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_small_8dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:drawablePadding="26dp"
+                    android:text="@{scoreRepresentationModel.titleScoreRepresentation.scoreTitle}"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+
+                    tools:text="Standard" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView27"
+                style="@style/text_h5_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large_24dp"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:layout_marginEnd="@dimen/margin_large_24dp"
+                android:gravity="center"
+                android:text="@{scoreRepresentationModel.titleScoreRepresentation.scoreSummary}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_score"
+                tools:text="Higher risk scores are observed in people with asthma, CODP, and other chronic airway conditions" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid_16dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_mid_16dp"
+                android:text="Sonde’s vocal biomarkers will be integrated in Qualcomm processors.  This will allow OEMs to personalize and cue health activities for their users. Applications include meditation and exercise reminders, telemedicine encounters, and other preventative health content."
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mid_16dp"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:layout_marginEnd="@dimen/margin_mid_16dp"
+                android:layout_marginBottom="@dimen/margin_mid_16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView27"
+                tools:layout_editor_absoluteX="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView_factor_title"
+                        style="@style/how_it_works_h5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_mid_16dp"
+                        android:text="@string/factors" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="18dp"
+                        android:src="@drawable/ic_info"
+                        android:visibility="gone"
+                        app:tint="@color/text_color_accent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_factors"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_factor_title"
+                        android:layout_marginTop="@dimen/margin_mid_16dp"
+                        android:overScrollMode="never" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView30"
+                style="@style/text_h3_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_36dp"
+                android:text="@string/tips_to_improve_your_fitness"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_tips"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:clipToPadding="false"
+                android:foregroundGravity="center"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+            <TextView
+                android:id="@+id/button5"
+                style="@style/button_white_with_gray_outline"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_56dp"
+                android:layout_marginStart="@dimen/margin_large_24dp"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:layout_marginEnd="@dimen/margin_large_24dp"
+                android:text="@string/go_to_your_insights_dashboard"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_accent"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewpager_tips" />
+
+            <TextView
+                android:id="@+id/textView31"
+                style="@style/text_h6_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_extra_48dp"
+                android:text="@string/need_to_talk_to_someone"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+            <TextView
+                android:id="@+id/textView32"
+                style="@style/text_p1_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mid_16dp"
+                android:layout_marginTop="@dimen/margin_small_8dp"
+                android:layout_marginEnd="@dimen/margin_mid_16dp"
+                android:layout_marginBottom="@dimen/margin_large_extra_48dp"
+                android:alpha="0.8"
+                android:autoLink="phone"
+                android:gravity="center"
+                android:text="@string/if_you_are_in_emotional_distress_or_suicidal_crisis_msg"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

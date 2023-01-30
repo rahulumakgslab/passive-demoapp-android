@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00283C</color>
+    <color name="colorPrimaryDark">#00344E</color>
+    <color name="colorAccent">#52C3FF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="pink">#FC77A0</color>
+
+    <color name="white_f9">#F9F9F9</color>
+    <color name="white_ea">#EAEAEA</color>
+    <color name="white_e5">#E5E5E5</color>
+
+
+    <!--    Background colors   -->
+    <color name="background_navy_blue">#00344E</color>
+    <color name="background_navy_blue_dark">#00283C</color>
+
+
+    <!--    Text colors  -->
+    <color name="text_color_black">#172239</color>
+    <color name="text_color_gray">#6D6D78</color>
+    <color name="text_color_gray_d5">#D5D4D4</color>
+    <color name="text_color_dark_blue">#475574</color>
+    <color name="text_color_accent">#52C3FF</color>
+    <color name="text_color_error_msg">#FC77A0</color>
+    <color name="text_color_menu">#172239</color>
+    <color name="score_high">#51BE63</color>
+
+
+    <!--   Onboarding   -->
+
+
+    <!-- Screens background color-->
+
+    <!-- dots inactive colors -->
+
+    <!-- dots active colors -->
+
+    <color name="score_peak">#3DD9B3</color>
+    <color name="score_peak_dark">#0BC799</color>
+
+    <color name="score_standard">#52C3FF</color>
+    <color name="score_standard_dark">#4D9DC8</color>
+
+    <color name="score_reduced">#DF8F55</color>
+    <color name="score_reduced_dark">#BC7746</color>
+
+    <color name="track_color1">#DD5E5E</color>
+    <color name="track_color2">#D1AE6F</color>
+    <color name="track_color3">#20C35D</color>
+    <array name="default_track_gradient">
+        <item>@color/track_color1</item>
+        <item>@color/track_color2</item>
+        <item>@color/track_color3</item>
+    </array>
+
+    <array name="aggregated_score_track_gradient_colors">
+        <item>@color/track_color1</item>
+        <item>@color/track_color1</item>
+        <item>@color/track_color2</item>
+        <item>@color/track_color3</item>
+    </array>
+
+</resources>

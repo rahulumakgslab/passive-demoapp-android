@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_enroll_user">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/sonde_logo" />
+
+
+            <TextView
+                android:id="@+id/heading"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:textFontWeight="800"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large_32dp"
+                android:layout_marginTop="@dimen/margin_large_extra_48dp"
+                android:layout_marginEnd="@dimen/margin_mid_16dp"
+                android:text="@string/passive_user_verification_and_health_check"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+
+            <TextView
+                android:id="@+id/sub_heading"
+                style="@style/text_p4_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_36dp"
+                android:paddingStart="@dimen/margin_mid_16dp"
+                android:paddingEnd="@dimen/margin_mid_16dp"
+                android:text="Capture and display in Real-time "
+                android:textAlignment="center"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_baseline_check_24"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/sub_heading1"
+                style="@style/text_p4_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:paddingStart="@dimen/margin_mid_16dp"
+                android:paddingEnd="@dimen/margin_mid_16dp"
+                android:text="Capture and score in background"
+                android:textAlignment="center"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_baseline_check_24"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/sub_heading3"
+                style="@style/text_p4_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large_24dp"
+                android:paddingStart="@dimen/margin_mid_16dp"
+                android:paddingEnd="@dimen/margin_mid_16dp"
+                android:text="Capture in passive/embedded    "
+                android:textAlignment="center"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_baseline_check_24"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_enroll_user"
+                style="@style/button_large_accent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large_32dp"
+                android:layout_marginRight="@dimen/margin_large_32dp"
+                android:layout_marginBottom="@dimen/margin_large_extra_60dp"
+                android:text="@string/enroll_user" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

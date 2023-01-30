@@ -1,0 +1,46 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.twilio.voipcall">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <application>
+
+        <activity
+            android:name="com.twilio.voipcall.CustomDeviceActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".VoiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/VoiceCall" />
+
+        <activity
+            android:name=".voiceprocessing.WavProcessingActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".IncomingCallNotificationService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="ACTION_ACCEPT" />
+                <action android:name="ACTION_REJECT" />
+            </intent-filter>
+        </service>
+
+        <!-- [START fcm_listener] -->
+        <service
+            android:name=".fcm.VoiceFirebaseMessagingService"
+            android:stopWithTask="false">
+            <intent-filter>
+
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".utils.WaveProcessService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- [END fcm_listener] -->
+
+    </application>
+</manifest>

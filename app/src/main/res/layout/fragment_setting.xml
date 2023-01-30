@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.sonde.mentalfitness.domain.GenderType" />
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.setting.SettingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/Padding_small_8dp">
+
+        <ImageButton
+            android:id="@+id/image_view_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_mid_16dp"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:layout_marginRight="@dimen/margin_mid_16dp"
+            android:background="@drawable/back_btn_bg"
+            android:contentDescription="@string/img_description_back_button"
+            android:src="@drawable/back_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_setting"
+            style="@style/text_p4_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_mid_16dp"
+            android:layout_marginTop="@dimen/margin_mid_16dp"
+            android:layout_marginRight="@dimen/margin_mid_16dp"
+            android:text="Setting"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/font_22sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_large_24dp"
+            android:alpha="0.6"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_logo" />
+
+        <TextView
+            android:id="@+id/text_continue_recording"
+            style="@style/how_it_works_h5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large_36dp"
+            android:text="Continue Recording for"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_line_1" />
+
+        <View
+            android:id="@+id/view_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_large_24dp"
+            android:alpha="0.6"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/text_continue_recording" />
+
+        <TextView
+            android:id="@+id/text_file_deletion"
+            style="@style/how_it_works_h5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large_36dp"
+            android:text="Segment File Deletion"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_line_2" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/margin_large_36dp"
+            app:layout_constraintTop_toBottomOf="@+id/view_line_2"/>
+
+        <View
+            android:id="@+id/view_line_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_large_24dp"
+            android:alpha="0.6"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/text_file_deletion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

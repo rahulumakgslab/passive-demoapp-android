@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sonde.mentalfitness.presentation.ui.record.readytorecord.ReadyToRecordViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fillViewport="true"
+            tools:context=".presentation.ui.record.readytorecord.ReadyToRecordFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_mid_16dp"
+                    android:layout_marginTop="@dimen/margin_top_back_button"
+                    android:onClick="@{()-> viewModel.onBackButtonClicked()}"
+                    android:src="@drawable/ic_back_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/daily_check_in_label_textView"
+                    style="@style/text_p2_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_24dp"
+                    android:text="@string/daily_check_in"
+                    app:layout_constraintEnd_toStartOf="@+id/daily_check_in_date_textView"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+                <TextView
+                    android:id="@+id/daily_check_in_date_textView"
+                    style="@style/text_p2_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small_extra_4dp"
+                    android:text="@{viewModel.todayDate}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/daily_check_in_label_textView"
+                    app:layout_constraintTop_toTopOf="@+id/daily_check_in_label_textView"
+                    tools:text="January 20th" />
+
+                <TextView
+                    android:id="@+id/textView_title"
+                    style="@style/text_h2_semi_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small_extra_4dp"
+                    android:gravity="center"
+                    android:text="@string/get_ready_to_record"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/daily_check_in_label_textView" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large_24dp"
+                    android:layout_marginTop="@dimen/margin_large_24dp"
+                    android:src="@drawable/ic_quiet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/text_h5_semi_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_mid_16dp"
+                    android:layout_marginTop="@dimen/margin_large_24dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:text="@string/find_a_quiet_place"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/text_p2_regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small_extra_4dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:text="@string/find_a_quiet_place_free_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large_24dp"
+                    android:layout_marginTop="@dimen/margin_large_24dp"
+                    android:src="@drawable/ic_review"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/text_h5_semi_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_mid_16dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:text="@{String.format(@string/record_for_x_seconds, viewModel.passageModel.timerLength)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/text_p2_regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:text="@{String.format(@string/speak_for_x_seconds_text, viewModel.passageModel.timerLength)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large_24dp"
+                    android:layout_marginTop="@dimen/margin_large_24dp"
+                    android:layout_marginEnd="@dimen/margin_large_24dp"
+                    android:background="@drawable/bg_rectangle_gray"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_mid_18dp"
+                        android:src="@drawable/ic_mic" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        style="@style/text_h5_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_mid_12dp"
+                        android:text="@string/your_recording_prompt" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        style="@style/text_p2_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_large_24dp"
+                        android:layout_marginTop="@dimen/margin_small_6dp"
+                        android:layout_marginEnd="@dimen/margin_large_24dp"
+                        android:layout_marginBottom="@dimen/margin_mid_18dp"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@{String.format(@string/be_prepared_to_talk_about_x_text, viewModel.passageModel.prompt.toLowerCase())}" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_next_step"
+                    style="@style/button_large_accent_bottom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_extra_48dp"
+                    android:onClick="@{()-> viewModel.onBeginRecordingClicked()}"
+                    android:text="@string/begin_recording"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <include
+            android:id="@+id/loading_view"
+            layout="@layout/loading_layout"
+            android:fitsSystemWindows="true"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
